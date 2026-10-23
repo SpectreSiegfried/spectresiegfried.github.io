@@ -1,0 +1,6 @@
+{
+  "archivoMaestro": "\\\\Servidor\\GestionProyectos\\Maestra_Proyectos_TI.xlsx",
+  "descripcion": "Ruta predeterminada del Excel maestro para la futura versión ejecutable.",
+  "modo": "seleccion-manual",
+  "observacion": "En navegador la ruta no puede abrirse automáticamente por restricciones de seguridad. La versión WebView2 podrá utilizar esta configuración."
+}

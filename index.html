@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Gestor de Proyectos TI</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <img
+          src="/recursos/Oxxo_Logo.svg.png"
+          width="100"
+          height="50"
+          alt=""
+          srcset=""
+        />
+      </div>
+      <div>
+        <h1 style="text-align: center">Gestor de Proyectos TI</h1>
+        <small id="estado">Sin archivo cargado</small>
+      </div>
+      <label class="btn" for="excel">Seleccionar Excel</label
+      ><input id="excel" type="file" accept=".xlsx,.xls" hidden />
+    </header>
+    <main class="main">
+      <section id="general">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+          "
+        >
+          <div>
+            <h2>Proyectos</h2>
+            <span class="muted">Vista general del portafolio</span>
+          </div>
+          <div class="summary" id="summary"></div>
+        </div>
+        <div class="toolbar">
+          <input id="buscar" placeholder="Buscar proyecto..." /><select
+            id="etapa"
+          >
+            <option value="">Todas las etapas</option></select
+          ><select id="salud">
+            <option value="">Todas las condiciones</option>
+            <option>Saludable</option>
+            <option>Desviado</option>
+            <option>Crítico</option>
+          </select>
+        </div>
+        <div class="card stage-panel">
+          <h3>Distribución por etapa</h3>
+          <div id="distribucionEtapas" class="stage-list"></div>
+        </div>
+        <div class="card" style="padding: 0; overflow: auto">
+          <table>
+            <thead>
+              <tr>
+                <th>Folio</th>
+                <th>Nombre</th>
+                <th>JP</th>
+                <th>LI</th>
+                <th>Avance Plan</th>
+                <th>Avance real</th>
+                <th>Desviación</th>
+                <th>Salud</th>
+              </tr>
+            </thead>
+            <tbody id="tabla"></tbody>
+          </table>
+        </div>
+      </section>
+      <section id="detalle" class="hidden">
+        <button class="back" id="volver">← Volver a proyectos</button>
+        <div id="contenido"></div>
+        <div class="report-actions">
+          <button class="btn" id="copiarReporte">Copiar reporte</button>
+          <button class="btn" id="descargarReporte">Descargar PNG</button>
+          <button class="btn" id="crearCorreo">✉ Crear correo</button>
+        </div>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
