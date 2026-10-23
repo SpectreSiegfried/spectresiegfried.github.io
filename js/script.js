@@ -293,7 +293,9 @@ Saludos.`;
 $("crearCorreo").addEventListener("click", crearCorreoOutlook);
 
 function convertirFecha(fecha) {
-  if (fecha != null && fecha != undefined && fecha.trim() !== "") {
+  if (fecha === "TBD") {
+    return "Por Definir";
+  }else if (fecha != null && fecha != undefined && fecha.trim() !== "") {
     const [mm, dd, yyyy] = fecha.split("/");
     return `${dd.padStart(2, "0")}/${mm.padStart(2, "0")}/${yyyy.length === 2 ? "20" + yyyy : yyyy}`;
   } else {
